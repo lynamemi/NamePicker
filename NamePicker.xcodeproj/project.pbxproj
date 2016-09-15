@@ -8,13 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		A840C8C51D89B44C00DF9ECD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A840C8C41D89B44C00DF9ECD /* AppDelegate.swift */; };
-		A840C8C71D89B44C00DF9ECD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A840C8C61D89B44C00DF9ECD /* ViewController.swift */; };
+		A840C8C71D89B44C00DF9ECD /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A840C8C61D89B44C00DF9ECD /* PickerViewController.swift */; };
 		A840C8CA1D89B44C00DF9ECD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A840C8C81D89B44C00DF9ECD /* Main.storyboard */; };
 		A840C8CD1D89B44C00DF9ECD /* NamePicker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A840C8CB1D89B44C00DF9ECD /* NamePicker.xcdatamodeld */; };
 		A840C8CF1D89B44C00DF9ECD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A840C8CE1D89B44C00DF9ECD /* Assets.xcassets */; };
 		A840C8D21D89B44C00DF9ECD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A840C8D01D89B44C00DF9ECD /* LaunchScreen.storyboard */; };
 		A840C8DD1D89B44D00DF9ECD /* NamePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A840C8DC1D89B44D00DF9ECD /* NamePickerTests.swift */; };
 		A840C8E81D89B44D00DF9ECD /* NamePickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A840C8E71D89B44D00DF9ECD /* NamePickerUITests.swift */; };
+		A840C8F61D89B75600DF9ECD /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A840C8F51D89B75600DF9ECD /* AddViewController.swift */; };
+		A840C8FB1D89C10E00DF9ECD /* First+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A840C8F91D89C10E00DF9ECD /* First+CoreDataClass.swift */; };
+		A840C8FC1D89C10E00DF9ECD /* First+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A840C8FA1D89C10E00DF9ECD /* First+CoreDataProperties.swift */; };
+		A840C8FF1D89C17000DF9ECD /* Last+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A840C8FD1D89C17000DF9ECD /* Last+CoreDataClass.swift */; };
+		A840C9001D89C17000DF9ECD /* Last+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A840C8FE1D89C17000DF9ECD /* Last+CoreDataProperties.swift */; };
+		A88BBADC1D8A099D001CAC7E /* AddViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BBADB1D8A099D001CAC7E /* AddViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +43,7 @@
 /* Begin PBXFileReference section */
 		A840C8C11D89B44C00DF9ECD /* NamePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NamePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A840C8C41D89B44C00DF9ECD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A840C8C61D89B44C00DF9ECD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A840C8C61D89B44C00DF9ECD /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		A840C8C91D89B44C00DF9ECD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A840C8CC1D89B44C00DF9ECD /* NamePicker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NamePicker.xcdatamodel; sourceTree = "<group>"; };
 		A840C8CE1D89B44C00DF9ECD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +55,12 @@
 		A840C8E31D89B44D00DF9ECD /* NamePickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NamePickerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A840C8E71D89B44D00DF9ECD /* NamePickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePickerUITests.swift; sourceTree = "<group>"; };
 		A840C8E91D89B44D00DF9ECD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A840C8F51D89B75600DF9ECD /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		A840C8F91D89C10E00DF9ECD /* First+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "First+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A840C8FA1D89C10E00DF9ECD /* First+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "First+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A840C8FD1D89C17000DF9ECD /* Last+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Last+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A840C8FE1D89C17000DF9ECD /* Last+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Last+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A88BBADB1D8A099D001CAC7E /* AddViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +91,10 @@
 		A840C8B81D89B44C00DF9ECD = {
 			isa = PBXGroup;
 			children = (
+				A840C8FD1D89C17000DF9ECD /* Last+CoreDataClass.swift */,
+				A840C8FE1D89C17000DF9ECD /* Last+CoreDataProperties.swift */,
+				A840C8F91D89C10E00DF9ECD /* First+CoreDataClass.swift */,
+				A840C8FA1D89C10E00DF9ECD /* First+CoreDataProperties.swift */,
 				A840C8C31D89B44C00DF9ECD /* NamePicker */,
 				A840C8DB1D89B44D00DF9ECD /* NamePickerTests */,
 				A840C8E61D89B44D00DF9ECD /* NamePickerUITests */,
@@ -100,12 +116,14 @@
 			isa = PBXGroup;
 			children = (
 				A840C8C41D89B44C00DF9ECD /* AppDelegate.swift */,
-				A840C8C61D89B44C00DF9ECD /* ViewController.swift */,
+				A840C8C61D89B44C00DF9ECD /* PickerViewController.swift */,
 				A840C8C81D89B44C00DF9ECD /* Main.storyboard */,
+				A840C8F51D89B75600DF9ECD /* AddViewController.swift */,
 				A840C8CE1D89B44C00DF9ECD /* Assets.xcassets */,
 				A840C8D01D89B44C00DF9ECD /* LaunchScreen.storyboard */,
 				A840C8D31D89B44C00DF9ECD /* Info.plist */,
 				A840C8CB1D89B44C00DF9ECD /* NamePicker.xcdatamodeld */,
+				A88BBADB1D8A099D001CAC7E /* AddViewDelegate.swift */,
 			);
 			path = NamePicker;
 			sourceTree = "<group>";
@@ -265,8 +283,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A840C8C71D89B44C00DF9ECD /* ViewController.swift in Sources */,
+				A840C8C71D89B44C00DF9ECD /* PickerViewController.swift in Sources */,
 				A840C8C51D89B44C00DF9ECD /* AppDelegate.swift in Sources */,
+				A840C9001D89C17000DF9ECD /* Last+CoreDataProperties.swift in Sources */,
+				A840C8FF1D89C17000DF9ECD /* Last+CoreDataClass.swift in Sources */,
+				A840C8F61D89B75600DF9ECD /* AddViewController.swift in Sources */,
+				A88BBADC1D8A099D001CAC7E /* AddViewDelegate.swift in Sources */,
+				A840C8FB1D89C10E00DF9ECD /* First+CoreDataClass.swift in Sources */,
+				A840C8FC1D89C10E00DF9ECD /* First+CoreDataProperties.swift in Sources */,
 				A840C8CD1D89B44C00DF9ECD /* NamePicker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,6 +542,7 @@
 				A840C8EE1D89B44D00DF9ECD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A840C8EF1D89B44D00DF9ECD /* Build configuration list for PBXNativeTarget "NamePickerTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +551,7 @@
 				A840C8F11D89B44D00DF9ECD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A840C8F21D89B44D00DF9ECD /* Build configuration list for PBXNativeTarget "NamePickerUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +560,7 @@
 				A840C8F41D89B44D00DF9ECD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

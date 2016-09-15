@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol AddViewProtocolDelegate: class {
+    func addViewController(_ controller: AddViewController, didFinishAddingName name: String)
+}
