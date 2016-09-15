@@ -12,6 +12,8 @@ class AddViewController: UIViewController {
 //    var firstName = [NSManagedObject]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var delegate: AddViewProtocolDelegate?
+    var nameLabelToChange = "Add"
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nameAdded: UITextField!
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
@@ -20,11 +22,20 @@ class AddViewController: UIViewController {
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         // call protocol function - make other view controller the delegate
-        let firstName = nameAdded.text!
-        delegate?.addViewController(self, didFinishAddingName: firstName)
+        if nameLabelToChange == "Add First Name" {
+            let firstName = nameAdded.text!
+            delegate?.addViewController(self, didFinishAddingFirstName: firstName)
+        } else if nameLabelToChange == "Add Last Name" {
+            let lastName = nameAdded.text!
+            delegate?.addViewController(self, didFinishAddingLastName: lastName)
+        } else {
+            print("save failed")
+        }
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameLabel.text = nameLabelToChange
         // Do any additional setup after loading the view.
     }
 

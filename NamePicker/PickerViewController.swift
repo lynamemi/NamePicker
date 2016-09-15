@@ -11,13 +11,21 @@ import UIKit; import CoreData
 
 class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, AddViewProtocolDelegate {
     var firstNames = [First]()
+    var lastNames = [Last]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     @IBOutlet weak var pickerViewSelected: UIPickerView!
+    @IBAction func addFirstNamePressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "Add", sender: 1)
+    }
+    @IBAction func addLastNamePressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "Add", sender: 2)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         fetchAllFirstNames()
+        fetchAllLastNames()
         pickerViewSelected.dataSource = self
         pickerViewSelected.delegate = self
     }
@@ -50,18 +58,37 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             print("\(error)")
         }
     }
+    
+    func fetchAllLastNames() {
+        let lastNameRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Last")
+        do {
+            let results = try context.fetch(lastNameRequest)
+            lastNames = results as! [Last]
+        } catch {
+            print("\(error)")
+        }
+    }
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return firstNames.count
+        if component == 0 {
+            return firstNames.count
+        } else {
+            return lastNames.count
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return firstNames[row].name
+        if component == 0 {
+            return firstNames[row].name
+        } else {
+            return lastNames[row].name
+        }
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return 2
     }
     
-    func addViewController(_ controller: AddViewController, didFinishAddingName name: String) {
+    func addViewController(_ controller: AddViewController, didFinishAddingFirstName name: String) {
 //        let newFirstName = NSManagedObject(entity: entity!, insertInto: context)
 //        newFirstName.setValue(nameAdded.text, forKey: "name")
         dismiss(animated: true, completion: nil)
@@ -77,11 +104,32 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         pickerViewSelected.reloadAllComponents()
     }
     
+    func addViewController(_ controller: AddViewController, didFinishAddingLastName name: String) {
+        //        let newFirstName = NSManagedObject(entity: entity!, insertInto: context)
+        //        newFirstName.setValue(nameAdded.text, forKey: "name")
+        dismiss(animated: true, completion: nil)
+        let newLastName = NSEntityDescription.insertNewObject(forEntityName: "Last", into: context) as NSManagedObject
+        do {
+            newLastName.setValue(name, forKey: "name")
+            try self.context.save()
+            print("Success!")
+        } catch {
+            print("Error: \(error)")
+        }
+        fetchAllLastNames()
+        pickerViewSelected.reloadAllComponents()
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let navigationController = segue.destination as! UINavigationController
         let controller = navigationController.topViewController as! AddViewController
         controller.delegate = self
+        if sender as! Int == 1 {
+            controller.nameLabelToChange = "Add First Name"
+        } else if sender as! Int == 2 {
+            controller.nameLabelToChange = "Add Last Name"
+        }
     }
 }
 

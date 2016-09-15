@@ -9,5 +9,6 @@
 import Foundation
 
 protocol AddViewProtocolDelegate: class {
-    func addViewController(_ controller: AddViewController, didFinishAddingName name: String)
+    func addViewController(_ controller: AddViewController, didFinishAddingFirstName name: String)
+    func addViewController(_ controller: AddViewController, didFinishAddingLastName name: String)
 }

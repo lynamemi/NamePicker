@@ -28,14 +28,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pZW-3I-dKP">
-                        <barButtonItem key="leftBarButtonItem" title="Add First" id="0G8-Mc-EyV">
+                        <barButtonItem key="leftBarButtonItem" tag="1" title="Add First" id="0G8-Mc-EyV">
                             <connections>
-                                <segue destination="hxm-hi-1eK" kind="presentation" id="uni-0N-fI5"/>
+                                <action selector="addFirstNamePressed:" destination="BYZ-38-t0r" id="VEZ-8f-TEc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" tag="2" title="Add Last" id="DQG-sQ-ZQa">
+                            <connections>
+                                <action selector="addLastNamePressed:" destination="BYZ-38-t0r" id="Phh-IG-3AZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="pickerViewSelected" destination="Fgv-lE-YfI" id="z9c-wC-ikB"/>
+                        <segue destination="hxm-hi-1eK" kind="presentation" identifier="Add" id="Wyb-e9-W9x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -89,6 +95,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="nameAdded" destination="bjb-jd-sTC" id="kZQ-Qf-BEN"/>
+                        <outlet property="nameLabel" destination="OhR-kN-u41" id="43O-mk-4Eb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWr-m0-rwz" userLabel="First Responder" sceneMemberID="firstResponder"/>
