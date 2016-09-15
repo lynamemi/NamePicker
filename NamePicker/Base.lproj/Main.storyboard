@@ -20,11 +20,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fgv-lE-YfI"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svN-rz-C2t">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hv-PM-Wcr">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="0hv-PM-Wcr" firstAttribute="top" secondItem="Fgv-lE-YfI" secondAttribute="bottom" constant="58.5" id="48K-BL-5jx"/>
+                            <constraint firstItem="svN-rz-C2t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="125" id="8rW-K0-C0Z"/>
                             <constraint firstItem="Fgv-lE-YfI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="DU5-o5-eHS"/>
+                            <constraint firstItem="svN-rz-C2t" firstAttribute="top" secondItem="Fgv-lE-YfI" secondAttribute="bottom" constant="58.5" id="fIH-wq-OMA"/>
                             <constraint firstItem="Fgv-lE-YfI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oRk-Fd-PuH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0hv-PM-Wcr" secondAttribute="trailing" constant="100" id="vIT-AN-079"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pZW-3I-dKP">
@@ -40,6 +54,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="firstNameLabel" destination="svN-rz-C2t" id="UEQ-p7-RZ2"/>
+                        <outlet property="lastNameLabel" destination="0hv-PM-Wcr" id="XrR-dE-dT4"/>
                         <outlet property="pickerViewSelected" destination="Fgv-lE-YfI" id="z9c-wC-ikB"/>
                         <segue destination="hxm-hi-1eK" kind="presentation" identifier="Add" id="Wyb-e9-W9x"/>
                     </connections>

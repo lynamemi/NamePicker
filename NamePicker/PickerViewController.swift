@@ -14,6 +14,8 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     var lastNames = [Last]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     @IBOutlet weak var pickerViewSelected: UIPickerView!
+    @IBOutlet weak var firstNameLabel: UILabel!
+    @IBOutlet weak var lastNameLabel: UILabel!
     @IBAction func addFirstNamePressed(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "Add", sender: 1)
     }
@@ -28,6 +30,8 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         fetchAllLastNames()
         pickerViewSelected.dataSource = self
         pickerViewSelected.delegate = self
+        firstNameLabel.text = firstNames[0].name!
+        lastNameLabel.text = lastNames[0].name!
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,9 +92,15 @@ class PickerViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return 2
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if component == 0 {
+            firstNameLabel.text = firstNames[row].name!
+        } else {
+            lastNameLabel.text = lastNames[row].name!
+        }
+    }
+    
     func addViewController(_ controller: AddViewController, didFinishAddingFirstName name: String) {
-//        let newFirstName = NSManagedObject(entity: entity!, insertInto: context)
-//        newFirstName.setValue(nameAdded.text, forKey: "name")
         dismiss(animated: true, completion: nil)
         let newFirstName = NSEntityDescription.insertNewObject(forEntityName: "First", into: context) as NSManagedObject
         do {
